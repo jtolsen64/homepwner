@@ -16,6 +16,7 @@
 		B2C10B151E76349E0066DD3B /* ItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C10B141E76349E0066DD3B /* ItemsViewController.swift */; };
 		B2C10B171E763E6C0066DD3B /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C10B161E763E6C0066DD3B /* Item.swift */; };
 		B2C10B191E76553B0066DD3B /* ItemStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C10B181E76553B0066DD3B /* ItemStore.swift */; };
+		B2C10B1B1E766B770066DD3B /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C10B1A1E766B770066DD3B /* ItemCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		B2C10B141E76349E0066DD3B /* ItemsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemsViewController.swift; sourceTree = "<group>"; };
 		B2C10B161E763E6C0066DD3B /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		B2C10B181E76553B0066DD3B /* ItemStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemStore.swift; sourceTree = "<group>"; };
+		B2C10B1A1E766B770066DD3B /* ItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				B2C10B161E763E6C0066DD3B /* Item.swift */,
 				B2C10B181E76553B0066DD3B /* ItemStore.swift */,
 				B2C10AEA1E7631B10066DD3B /* Main.storyboard */,
+				B2C10B1A1E766B770066DD3B /* ItemCell.swift */,
 				B2C10AED1E7631B10066DD3B /* Assets.xcassets */,
 				B2C10AEF1E7631B10066DD3B /* LaunchScreen.storyboard */,
 				B2C10AF21E7631B10066DD3B /* Info.plist */,
@@ -269,6 +272,7 @@
 				B2C10B171E763E6C0066DD3B /* Item.swift in Sources */,
 				B2C10B191E76553B0066DD3B /* ItemStore.swift in Sources */,
 				B2C10AE71E7631B10066DD3B /* AppDelegate.swift in Sources */,
+				B2C10B1B1E766B770066DD3B /* ItemCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

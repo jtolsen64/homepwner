@@ -16,23 +16,27 @@ class ItemsViewController: UITableViewController {
         tableView.estimatedRowHeight = 65
     }
     
+    //Makes the table reload its data to ensure all changes are reflected
     override func viewWillAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
         tableView.reloadData()
     }
     
+    //Makes a top left navigation bar button for editing cells
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
         navigationItem.leftBarButtonItem = editButtonItem
     }
     
+    //Returns the number of rows in a section
     override func tableView(_ tableView: UITableView,
                             numberOfRowsInSection section: Int) -> Int {
         return itemStore.allItems.count
     }
     
+    //Handles the appearance of cells.
     override func tableView(_ tableView: UITableView,
                             cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
@@ -52,6 +56,7 @@ class ItemsViewController: UITableViewController {
         return cell
     }
     
+    //Presents an alert to confirm any removal attempts
     override func tableView(_ tableView: UITableView,
                             commit editingStyle: UITableViewCellEditingStyle,
                             forRowAt indexPath: IndexPath) {
@@ -85,6 +90,7 @@ class ItemsViewController: UITableViewController {
         }
     }
     
+    //Handles movement of cells in the allItems array
     override func tableView(_ tableView: UITableView,
                             moveRowAt sourceIndexPath: IndexPath,
                             to destinationIndexPath: IndexPath) {
@@ -92,6 +98,7 @@ class ItemsViewController: UITableViewController {
         itemStore.moveItem(from: sourceIndexPath.row, to: destinationIndexPath.row)
     }
     
+    //Handles the passing of items from one view to another when a segue is called.
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         //if the triggered segue is the "showItem" segue
         switch segue.identifier {

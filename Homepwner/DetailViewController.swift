@@ -19,6 +19,7 @@ class DetailViewController: UIViewController, UITextFieldDelegate,
     
     var item: Item! {
         didSet {
+            //the title for the view is the tapped item
             navigationItem.title = item.name
         }
     }
@@ -53,10 +54,12 @@ class DetailViewController: UIViewController, UITextFieldDelegate,
             dismiss(animated: true, completion: nil)
     }
     
+    //tapping the background dismisses the keyboard.
     @IBAction func backgroundTapped(_ sender: UITapGestureRecognizer) {
         view.endEditing(true)
     }
     
+    //Formats numbers for the value text field
     let numberFormatter: NumberFormatter = {
         let formatter = NumberFormatter()
         formatter.numberStyle = .decimal
@@ -65,6 +68,7 @@ class DetailViewController: UIViewController, UITextFieldDelegate,
         return formatter
     } ()
     
+    //Formats the date for the Date Created label
     let dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateStyle = .medium
@@ -72,7 +76,8 @@ class DetailViewController: UIViewController, UITextFieldDelegate,
         return formatter
     } ()
     
-    
+    //When this view appears, the fields are loaded with the appropriate
+    //values from the tapped item.
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -83,6 +88,8 @@ class DetailViewController: UIViewController, UITextFieldDelegate,
         dateLabel.text = dateFormatter.string(from: item.dateCreated)
     }
     
+    //When this view disappears/is closed, the data in the fields
+    //is saved into the item displayed
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
@@ -100,6 +107,8 @@ class DetailViewController: UIViewController, UITextFieldDelegate,
         }
     }
     
+    //If the user taps enter on the keyboard, the text field resigns as
+    //first responder and the resignFirstResponder method is called.
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true

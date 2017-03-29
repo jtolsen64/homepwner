@@ -9,6 +9,9 @@
 import UIKit
 
 class ItemsViewController: UITableViewController {
+    var itemStore: ItemStore!
+    var imageStore: ImageStore!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -79,6 +82,9 @@ class ItemsViewController: UITableViewController {
             
                 //Remove the item from the store
                 self.itemStore.removeItem(item)
+                                                
+                //Remove the item's image from the image store
+                self.imageStore.deleteImage(forKey: item.itemKey)
             
                 //Also remove that row from the table view with an animation
                 self.tableView.deleteRows(at: [indexPath], with: .automatic)
@@ -111,14 +117,13 @@ class ItemsViewController: UITableViewController {
                 let detailViewController
                     = segue.destination as! DetailViewController
                 detailViewController.item = item
+                detailViewController.imageStore = imageStore
             }
         default:
             preconditionFailure("Unexpected segue identifier.")
         }
     }
     
-    
-    var itemStore: ItemStore!
     
     @IBAction func addNewItem(_ sender: UIBarButtonItem) {
         //Create a new item and add it to the store
